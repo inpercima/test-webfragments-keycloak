@@ -1,0 +1,12 @@
+{
+  "name": "shell-backend",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "web-fragments": "0.8.0",
+    "express": "5.1.0"
+  },
+  "type": "module"
+}
