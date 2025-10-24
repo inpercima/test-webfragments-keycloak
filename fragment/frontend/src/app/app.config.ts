@@ -18,7 +18,7 @@ export const appConfig: ApplicationConfig = {
         clientId: 'web-app',
       },
       initOptions: {
-        onLoad: undefined, // 'check-sso',
+        onLoad: 'check-sso', // undefined,
         checkLoginIframe: false,
       },
     }),

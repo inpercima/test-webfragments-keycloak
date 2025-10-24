@@ -108,6 +108,9 @@ Use as user = password =  **webfragements**.
 
 You should see the shell and the fragment loaded with a button.
 Clicking the button calls a request to load text **Hello World**.
+But this works not in current situation, but should.
+This is because we use in the fragment keycloak `onLoad` Option with `'check-sso'`.
+It works with the value `undefined` but that is not desired.
 
 ## Optional
 
