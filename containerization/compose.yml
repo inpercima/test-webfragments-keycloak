@@ -20,7 +20,7 @@ services:
       - keycloak-network
 
   keycloak:
-    image: keycloak/keycloak:26.4
+    image: quay.io/keycloak/keycloak:26.4.2
     container_name: keycloak
     environment:
       KC_DB: postgres
@@ -30,9 +30,7 @@ services:
       KC_HEALTH_ENABLED: true
       KC_METRICS_ENABLED: true
       KC_HOSTNAME: localhost
-      KC_BOOTSTRAP_ADMIN_USERNAME: admin
-      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
-    entrypoint: ["/opt/keycloak/keycloak-init.sh"]
+    command: ["start-dev", "--import-realm"]
     healthcheck:
       test: [ "CMD-SHELL", "exec 3<>/dev/tcp/localhost/8080 && echo -e 'GET /health/ready HTTP/1.1\\r\\nHost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3 && cat <&3 | grep -q '200 OK'" ]
       interval: 30s

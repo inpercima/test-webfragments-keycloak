@@ -100,7 +100,12 @@ pnpm start
 
 ### Login
 
-Use the user **webfragements** same as password.
+Open in browser `http://localhost:8081/admin` to login to admin console of keycloak.
+Use as user = password = **admin**.
+
+Open in browser `http://localhost:3000/` to login to shell.
+Use as user = password =  **webfragements**.
+
 You should see the shell and the fragment loaded with a button.
 Clicking the button calls a request to load text **Hello World**.
 
@@ -117,6 +122,5 @@ The realms will be imported on startup of the compose file.
 cd containerization
 
 # export realms
-docker compose run --rm keycloak export --dir /opt/keycloak/data/import --realm dev
-docker compose run --rm keycloak export --dir /opt/keycloak/data/import --realm master
+docker compose run --rm keycloak export --dir /opt/keycloak/data/import
 ```
